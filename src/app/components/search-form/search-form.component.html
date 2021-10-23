@@ -1,0 +1,26 @@
+<mat-card class="search-form-container">
+  <form class="flex-container" (submit)="search($event)">
+    <mat-form-field appearance="fill">
+      <mat-label>Country</mat-label>
+      <mat-select [(ngModel)]="selectedCountry" name="countries">
+        <mat-option *ngFor="let country of countries" [value]="country.value">
+          {{ country.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <mat-select [(ngModel)]="selectedCategory" name="categories">
+        <mat-option
+          *ngFor="let category of categories"
+          [value]="category.value"
+        >
+          {{ category.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" class="search-btn">
+      Search
+    </button>
+  </form>
+</mat-card>

@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span class="example-spacer"></span>
+    <span>Top headlines</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<app-search-form (searchParams)="getNews($event)"></app-search-form>
+<app-news-results
+  [results]="results"
+  *ngIf="!loading && results"
+></app-news-results>
+<mat-spinner *ngIf="loading"></mat-spinner>

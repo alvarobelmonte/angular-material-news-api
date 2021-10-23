@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>Search news</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<app-general-search-form
+  (searchGeneral)="getNews($event)"
+></app-general-search-form>
+<app-news-results
+  [results]="results"
+  *ngIf="!loading && results"
+></app-news-results>
+<mat-spinner *ngIf="loading"></mat-spinner>

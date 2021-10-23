@@ -1,0 +1,32 @@
+<mat-card class="search-form-container">
+  <form class="flex-container" (submit)="search($event)" #f="ngForm">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Search news about...</mat-label>
+      <input
+        matInput
+        placeholder="Bitcoin..."
+        [(ngModel)]="query"
+        name="query"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Language</mat-label>
+      <mat-select [(ngModel)]="selectedLanguage" name="language">
+        <mat-option *ngFor="let language of languages" [value]="language.value">
+          {{ language.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      class="search-btn"
+      [disabled]="!f.valid"
+    >
+      Search
+    </button>
+  </form>
+</mat-card>

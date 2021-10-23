@@ -1,0 +1,9 @@
+.mat-spinner {
+  margin: 0 auto;
+  margin-top: 10%;
+}
+.mat-toolbar-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
